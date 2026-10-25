@@ -1,11 +1,11 @@
-# Context-Aware Misbehavior Detection in V2X 
+# Context-Aware misbehaviour Detection in V2X 
 
-A hybrid misbehavior detector for vehicular networks (V2X). It combines **physics-based plausibility checks**, **per-pseudonym window features**, **multi-radius neighbourhood context**, an **environment (road) prior** and **XGBoost** classifiers, with a **distance-weighted cooperative vote** among neighbours.
+A hybrid misbehaviour detector for vehicular networks (V2X). It combines **physics-based plausibility checks**, **per-pseudonym window features**, **multi-radius neighbourhood context**, an **environment (road) prior** and **XGBoost** classifiers, with a **distance-weighted cooperative vote** among neighbours.
 ---
 
 ## 1. Problem
 
-V2X messages (BSMs) are authenticated, but authentication does not guarantee the content is *correct*. A certified vehicle can still send false positions or speeds, flood the channel, replay old data, or pretend to be several vehicles (Sybil). **Misbehavior detection** finds such vehicles from message content and context.
+V2X messages (BSMs) are authenticated, but authentication does not guarantee the content is *correct*. A certified vehicle can still send false positions or speeds, flood the channel, replay old data, or pretend to be several vehicles (Sybil). **misbehaviour detection** finds such vehicles from message content and context.
 
 ## 2. Dataset
 
@@ -16,7 +16,7 @@ V2X messages (BSMs) are authenticated, but authentication does not guarantee the
 | Messages | 3,194,808 |
 | Real vehicles (`sender`) | 24,663 |
 | Pseudonyms (`senderPseudo`) | 118,909 |
-| Classes | 20 (Normal + 19 misbehavior types) |
+| Classes | 20 (Normal + 19 misbehaviour types) |
 | Normal share | about 59.5% |
 
 **Important data decisions**
@@ -106,12 +106,12 @@ A constant position offset keeps the track internally consistent (speed matches 
 
 1. Create a Kaggle notebook with a GPU and add the dataset *VeReMi_Extension_Clean_Data* (`mixalldata_clean.csv`).
 2. Run `notebook0_dataset_check.ipynb` to verify the data and labels.
-3. Run `notebook1_misbehavior_detection.ipynb` top to bottom (window-size comparison in Section 12 is the slowest part).
+3. Run `notebook1_misbehaviour_detection.ipynb` top to bottom (window-size comparison in Section 12 is the slowest part).
 
 ```
 .
 ├── notebook0_dataset_check.ipynb      # data and label sanity checks
-├── notebook1_misbehavior_detection.ipynb
+├── notebook1_misbehaviour_detection.ipynb
 ├── results_table.csv                  # written by the notebook
 └── README.md
 ```
